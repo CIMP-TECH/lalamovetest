@@ -139,9 +139,9 @@ window.loadLeverJobs = function (options) {
     //   if (haveDepartments) {
     //     content += '</section>';
     //   };
-    content+='</table>'
+    
     }
-
+    content+='</table>'
     //content += '</ul>';
     jobsContainer.innerHTML = content;
     window.dispatchEvent(new Event('leverJobsRendered'));
