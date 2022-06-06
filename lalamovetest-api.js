@@ -113,7 +113,7 @@ window.loadLeverJobs = function (options) {
           return 1
       return 0
     });
-
+    content+='<table><tr><th>Job</th><th>Department</th><th>Location</th></tr>'
     for(var i = 0; i < groupedPostings.length; i++) {
 
       // If there are no departments used, there is only one "unspecified" department, and we don't have to render that.
@@ -121,25 +121,27 @@ window.loadLeverJobs = function (options) {
         var haveDepartments = true;
       };
 
-      if (haveDepartments) {
-        content += '<section class="lever-department" data-department="' + groupedPostings[i].departmentTitle + '"><h3 class="lever-department-title">' + sanitizeForHTML(groupedPostings[i].departmentTitle) + '</h3>';
-      };
+    //   if (haveDepartments) {
+    //     content += '<section class="lever-department" data-department="' + groupedPostings[i].departmentTitle + '"><h3 class="lever-department-title">' + sanitizeForHTML(groupedPostings[i].departmentTitle) + '</h3>';
+    //   };
 
       for (j = 0; j < groupedPostings[i].teams.length; j ++) {
 
-        content += '<ul class="lever-team" data-team="' + groupedPostings[i].teams[j].teamTitle + '"><li><h4 class="lever-team-title">' + sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) + '</h4><ul>';
+        //content += '<ul class="lever-team" data-team="' + groupedPostings[i].teams[j].teamTitle + '"><li><h4 class="lever-team-title">' + sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) + '</h4><ul>';
 
         for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k ++) {
-          content += '<li class="lever-job" data-department="' + groupedPostings[i].departmentTitle +'" data-team="' + groupedPostings[i].teams[j].postings[k].categories.team + '" data-location="' + groupedPostings[i].teams[j].postings[k].categories.location + '"data-work-type="' + groupedPostings[i].teams[j].postings[k].categories.commitment + '">' +
-          '<a class="lever-job-title" href="https://www.lalamove.com/career-posts?post-id=' + groupedPostings[i].teams[j].postings[k].id + '">' + sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text) + '</a><span class="lever-job-tag">' + (sanitizeForHTML(groupedPostings[i].teams[j].postings[k].categories.location) || '') + '</span></li>';
+          //content += '<li class="lever-job" data-department="' + groupedPostings[i].departmentTitle +'" data-team="' + groupedPostings[i].teams[j].postings[k].categories.team + '" data-location="' + groupedPostings[i].teams[j].postings[k].categories.location + '"data-work-type="' + groupedPostings[i].teams[j].postings[k].categories.commitment + '">' +
+          //'<a class="lever-job-title" href="https://www.lalamove.com/career-posts?post-id=' + groupedPostings[i].teams[j].postings[k].id + '">' + sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text) + '</a><span class="lever-job-tag">' + (sanitizeForHTML(groupedPostings[i].teams[j].postings[k].categories.location) || '') + '</span></li>';
+        content+='<tr class="lever-job" data-department="' + groupedPostings[i].departmentTitle +'" data-team="' + groupedPostings[i].teams[j].postings[k].categories.team + '" data-location="' + groupedPostings[i].teams[j].postings[k].categories.location + '"data-work-type="' + groupedPostings[i].teams[j].postings[k].categories.commitment + '"><td><a class="lever-job-title" href="https://www.lalamove.com/career-posts?post-id=' + groupedPostings[i].teams[j].postings[k].id + '">' + sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text) + '</a></td>' + sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) + '<td></td><td>' + (sanitizeForHTML(groupedPostings[i].teams[j].postings[k].categories.location) || '') + '</td></tr>'
         }
 
-        content += '</ul></li></ul>';
+        //content += '</ul></li></ul>';
 
       }
-      if (haveDepartments) {
-        content += '</section>';
-      };
+    //   if (haveDepartments) {
+    //     content += '</section>';
+    //   };
+    content+='</table>'
     }
 
     content += '</ul>';
