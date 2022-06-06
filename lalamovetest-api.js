@@ -128,15 +128,13 @@ window.loadLeverJobs = function (options) {
       for (j = 0; j < groupedPostings[i].teams.length; j ++) {
 
         //content += '<ul class="lever-team" data-team="' + groupedPostings[i].teams[j].teamTitle + '"><li><h4 class="lever-team-title">' + sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) + '</h4><ul>';
-        content+='<tr>'
         for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k ++) {
           //content += '<li class="lever-job" data-department="' + groupedPostings[i].departmentTitle +'" data-team="' + groupedPostings[i].teams[j].postings[k].categories.team + '" data-location="' + groupedPostings[i].teams[j].postings[k].categories.location + '"data-work-type="' + groupedPostings[i].teams[j].postings[k].categories.commitment + '">' +
           //'<a class="lever-job-title" href="https://www.lalamove.com/career-posts?post-id=' + groupedPostings[i].teams[j].postings[k].id + '">' + sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text) + '</a><span class="lever-job-tag">' + (sanitizeForHTML(groupedPostings[i].teams[j].postings[k].categories.location) || '') + '</span></li>';
-        content+='<td><a class="lever-job-title" href="https://www.lalamove.com/career-posts?post-id=' + groupedPostings[i].teams[j].postings[k].id + '">' + sanitizeForHTML(groupedPostings[i].departmentTitle) + '</a></td><td>' + sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) + '</td><td>' + (sanitizeForHTML(groupedPostings[i].teams[j].postings[k].categories.location) || '') + '</td>'
+        content+='<tr><td><a class="lever-job-title" href="https://www.lalamove.com/career-posts?post-id=' + groupedPostings[i].teams[j].postings[k].id + '">' + sanitizeForHTML(groupedPostings[i].departmentTitle) + '</a></td><td>' + sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) + '</td><td>' + (sanitizeForHTML(groupedPostings[i].teams[j].postings[k].categories.location) || '') + '</td></tr>'
         }
 
         //content += '</ul></li></ul>';
-        content+='</tr>'
       }
     //   if (haveDepartments) {
     //     content += '</section>';
