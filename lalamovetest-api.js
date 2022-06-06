@@ -56,7 +56,7 @@ window.loadLeverJobs = function (options) {
 
     var content = "";
     var groupedPostings = [];
-    console.log(responseData);
+   
     for(var i = 0; i < responseData.length; i++) {
       if (!responseData[i]) continue;
       if (!responseData[i].postings) continue;
@@ -104,6 +104,7 @@ window.loadLeverJobs = function (options) {
     }
 
     // Sort by department
+    console.log(groupedPostings);
     groupedPostings.sort(function(a, b) {
       var departmentA=a.department.toLowerCase(), departmentB=b.department.toLowerCase()
       if (departmentA < departmentB)
