@@ -144,7 +144,7 @@ window.loadLeverJobs = function (options) {
     content+='</table>'
     }
 
-    content += '</ul>';
+    //content += '</ul>';
     jobsContainer.innerHTML = content;
     window.dispatchEvent(new Event('leverJobsRendered'));
   }
