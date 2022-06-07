@@ -131,7 +131,7 @@ window.loadLeverJobs = function (options) {
         for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k ++) {
           //content += '<li class="lever-job" data-department="' + groupedPostings[i].departmentTitle +'" data-team="' + groupedPostings[i].teams[j].postings[k].categories.team + '" data-location="' + groupedPostings[i].teams[j].postings[k].categories.location + '"data-work-type="' + groupedPostings[i].teams[j].postings[k].categories.commitment + '">' +
           //'<a class="lever-job-title" href="https://www.lalamove.com/career-posts?post-id=' + groupedPostings[i].teams[j].postings[k].id + '">' + sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text) + '</a><span class="lever-job-tag">' + (sanitizeForHTML(groupedPostings[i].teams[j].postings[k].categories.location) || '') + '</span></li>';
-        content+='<tr><td><a class="lever-job-title" href="https://www.lalamove.com/career-posts?post-id=' + groupedPostings[i].teams[j].postings[k].id + '">' + sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text) + '</a></td><td>' + sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) + '</td><td>' + (sanitizeForHTML(groupedPostings[i].teams[j].postings[k].categories.location) || '') + '</td></tr>'
+        content+='<tr><td><a class="lever-job-title" href="https://www.lalamove.com/career-posts?post-id=' + groupedPostings[i].teams[j].postings[k].id + '">' + sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text) + '</a></td><td class="lever-job">' + sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) + '</td><td>' + (sanitizeForHTML(groupedPostings[i].teams[j].postings[k].categories.location) || '') + '</td></tr>'
         }
 
         //content += '</ul></li></ul>';
