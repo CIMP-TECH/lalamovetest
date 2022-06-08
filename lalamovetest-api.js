@@ -56,7 +56,7 @@ window.loadLeverJobs = function (options) {
 
     var content = "";
     var groupedPostings = [];
-   
+    console.log(responseData);
     for(var i = 0; i < responseData.length; i++) {
       if (!responseData[i]) continue;
       if (!responseData[i].postings) continue;
@@ -104,7 +104,7 @@ window.loadLeverJobs = function (options) {
     }
 
     // Sort by department
-    console.log(groupedPostings);
+   
     groupedPostings.sort(function(a, b) {
       var departmentA=a.department.toLowerCase(), departmentB=b.department.toLowerCase()
       if (departmentA < departmentB)
@@ -113,7 +113,7 @@ window.loadLeverJobs = function (options) {
           return 1
       return 0
     });
-    content+='<table><tr><th>Job</th><th>Department</th><th>Location</th></tr>'
+    content+='<table><trclass="lever-job" data-department="' + groupedPostings[i].departmentTitle +'" data-team="' + groupedPostings[i].teams[j].postings[k].categories.team + '" data-location="' + groupedPostings[i].teams[j].postings[k].categories.location + '"data-work-type="' + groupedPostings[i].teams[j].postings[k].categories.commitment + '"><td><a class="lever-job-title" href="https://www.lalamove.com/career-posts?post-id=' + groupedPostings[i].teams[j].postings[k].id + '"><th>Job</th><th>Department</th><th>Location</th></tr>'
     for(var i = 0; i < groupedPostings.length; i++) {
 
       // If there are no departments used, there is only one "unspecified" department, and we don't have to render that.
