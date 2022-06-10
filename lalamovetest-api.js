@@ -113,7 +113,7 @@ window.loadLeverJobs = function (options) {
           return 1
       return 0
     });
-    content+='<table><thead><tr><th>Job</th><th>Department</th><th>Location</th></tr></thead><tbody>'
+    //content+='<table><thead><tr><th>Job</th><th>Department</th><th>Location</th></tr></thead><tbody>'
     for(var i = 0; i < groupedPostings.length; i++) {
 
       // If there are no departments used, there is only one "unspecified" department, and we don't have to render that.
@@ -141,7 +141,7 @@ window.loadLeverJobs = function (options) {
     //   };
     
     }
-    content+='</tbody></table>'
+    //content+='</tbody></table>'
     //content += '</ul>';
     jobsContainer.innerHTML = content;
     window.dispatchEvent(new Event('leverJobsRendered'));
